@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My All sketches</title>
+    
+</head>
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif; 
+    scroll-behavior: smooth;
+
+}
+section{
+    padding: 100px 200px;
+}
+header{
+    z-index: 999;
+    position: fixed;
+    background:#8900fa;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease;
+}
+
+header.sticky{
+    background:#0c73b8;
+    padding: 10px 200px;
+}
+header .brand{
+    color:#000;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration:none ;
+}
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation a{
+    color:#000;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+header .navigation a:hover{
+    color:rgb(255, 0, 221);
+}
+
+header.sticky .navigation a:hover{
+    color: rgb(248, 10, 248);
+}
+body{
+    min-height: 110vh;
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-title{
+    position: relative;
+    color: #3a6cf4;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+.section-title:before{
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 50%;
+    width: 140px;
+    height: 4px;
+    background: #3a6cf4;
+    transform: translateX(-50%);
+}
+.section-title:after{
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #3a6cf4;
+    transform: translateX(-50%);
+}
+.mysketches{
+    background: #000016;
+}
+
+.mysketches .content{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.mysketches .content .card{
+    width: 340px;
+    margin: 15px;
+}
+
+.mysketches .content .card .card-img{
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.mysketches .content .card .card-img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 00.5s ease;
+}
+
+.mysketches .content .card .card-img img:hover{
+    transform: scale(1.2);
+}
+
+.footer{
+    background: #000016;
+    color: #fff;
+    text-align: center;
+    padding: 2em;
+}
+
+.footer .footer-title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer p{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.footer p a{
+    color: #3a6cf4;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media(max-width:1040px){
+    header{
+      padding: 12px 20px;
+    }
+    header.sticky{
+        padding: 10px 20px;
+    }
+    header .navigation{
+        display: none;
+    }
+
+    header .navigation.active{
+        z-index: 888;
+        position: fixed;
+        background: #fff;
+        top: 0;
+        right: 0;
+        width: 380px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+        transition:0.3s ease ;
+    }
+
+    header .navigation a{
+        color: #000;
+        font-size: 1.2em;
+        margin: 10px;
+        padding: 0 20px;
+        border-radius: 20px;
+    }
+
+    header .navigation a:hover{
+        background: #3a6cf4;
+        color: #fff;
+        transition: 0.3s ease;
+    }
+    .menu-btn{
+        position: absolute;
+        background: url('menuicon.png')no-repeat;
+        background-size: 30px;
+        background-position:center;
+        width: 40px;
+        height: 40px;
+        right: 0;
+        margin: 0 20px;
+        cursor: pointer;
+        transition:0.3s ease ;
+    }
+
+    .menu-btn.active{
+        z-index: 999;
+        background: url('close.png')no-repeat;
+        background-size: 25px;
+        background-position:center;
+        transition: 0.3s ease;
+        filter: invert(1);
+    }
+
+    section{
+        padding: 80px 20px;
+    }
+
+    .main .content h2{
+        
+        font-size: 1em;
+        
+    }
+
+    .animated-text h3{
+        font-size: 2.3em;
+    }
+
+    .section-title{
+        font-size: 1.8em;
+    }
+
+    .about .content{
+        flex-direction: column;
+    }
+
+    .about .content .column{
+        position: relative;
+        width: 100%;
+    }
+
+    .about .content .col-right{
+        margin-top: 40px;
+    }
+
+    .skills .content{
+        flex-direction: column;
+    }
+
+    .skills .content .column{
+        position: relative;
+        width: 100%;
+    }
+
+    .skills .content .col-right{
+        margin-top: 40px;
+    }
+
+    .contact-form{
+        padding: 35px 40px;
+    }
+}
+
+.scrollToTop-btn{
+    z-index:999;
+    position: fixed;
+    background: #3a6cf4;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    right: 0;
+    bottom: 10px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 3px;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+
+
+
+</style>
+<body>
+    <header>
+        <a href="index.html" class="brand">Ansh</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html">About</a>
+          <a href="index.html">Skills</a>
+          <a href="#index.html">sketches</a>
+          <a href="#index.html">Contact</a>
+        </div>
+      </header>
+      <section>
+        <section class="mysketches" id="mysketches">
+            <div class="title reveal">
+              <h2 class="section-title">My Sketches</h2>
+            </div>
+            <div class="content">
+              <div class="card reveal">
+                <div class="card-img">
+                  <a href="ssr.jpg"><img src="ssr.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="hritik.jpg"><img src="hritik.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="sketch3.jpg"><img src="sketch3.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="sketch4.jpg"><img src="sketch4.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="sketch5.jpg"><img src="sketch5.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="sketch6.jpg"><img src="sketch6.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="sketch7.jpg"><img src="sketch7.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="sketch8.jpg"><img src="sketch8.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="skecth9.jpg"><img src="skecth9.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="sketch10.jpg"><img src="sketch10.jpg" alt=""></a>
+                </div>
+              </div>
+              <div class="card reveal">
+                <div class="card-img">
+                    <a href="skecth11.jpg"><img src="skecth11.jpg" alt=""></a>
+                </div>
+              </div>
+      </section>
+
+      <footer class="footer">
+        <span class="footer-title">Ansh Mathuria</span>
+        <p>Copyright @2021 <a href="#">Ansh Mathuria Arts</a>. All Rights Reserved.</p>
+      </footer>
+      
+<script>
+         window.addEventListener("scroll",function(){
+    const header=document.querySelector("header");
+    header.classList.toggle('sticky',window.scrollY>0);
+})
+
+//javascript of responsive navigation sidebar menu
+const menuBtn=document.querySelector(".menu-btn");
+const navigation=document.querySelector(".navigation");
+const navigationItems=document.querySelectorAll(".navigation a")
+
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+})
+
+navigationItems.forEach((navigationItems)=>{
+    navigationItems.addEventListener("click",()=>{
+        menuBtn.classList.remove("active");
+        navigation.classList.remove("active");
+    })
+})
+</script>
+</body>
+</html>
